@@ -1,0 +1,6 @@
+{
+  "scripts": [],
+  "assets": ["./node_modules/koffi/build/2.5.0/koffi_win32_x64/koffi.node"],
+  "targets": ["node16-win-x64"],
+  "outputPath": "dist"
+}

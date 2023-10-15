@@ -1,0 +1,37 @@
+{
+  "name": "webview-test",
+  "version": "1.0.0",
+  "description": "webview 打包测试",
+  "author": "空巷一人",
+  "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "pkg": "pkg app/index.js -c config.pkg.json -C GZip --no-bytecode --public-packages \"*\" --public && ts-node --esm ./build.mts",
+    "postinstall": "patch-package",
+    "compile": "rimraf ./app && tsc && tsc-alias",
+    "pkg-edit": "ts-node --esm ./pkg-edit.mts",
+    "build": "npm run compile && rimraf ./dist && npm run pkg && npm run pkg-edit"
+  },
+  "keywords": [
+    "webview",
+    "node",
+    "nodejs",
+    "pkg"
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@tsconfig/node16": "^16.1.1",
+    "@types/node": "^16.18.58",
+    "patch-package": "^8.0.0",
+    "pkg": "^5.8.1",
+    "resedit": "^2.0.0",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.8",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "koffi": "2.5.0",
+    "webview-nodejs": "0.2.4"
+  }
+}
